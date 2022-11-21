@@ -17,6 +17,9 @@ spring:
     open-in-view: false
     generate-ddl: false
     show-sql: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   cache:
     type: redis
   redis:

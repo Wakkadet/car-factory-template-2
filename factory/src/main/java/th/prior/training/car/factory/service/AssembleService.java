@@ -4,10 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import th.prior.training.car.factory.component.redis.RedisCachComponent;
 import th.prior.training.car.factory.component.util.AssembleTransformComponent;
 import th.prior.training.car.factory.model.AssembleRequestModel;
 import th.prior.training.car.factory.model.TypeCarInfoModel;
-import th.prior.training.car.factory.component.redis.RedisCachComponent;
 import th.prior.training.car.factory.component.util.TypeCarInfoTransformComponent;
 
 import java.util.List;
@@ -17,7 +17,9 @@ import java.util.List;
 public class AssembleService {
 
     private AssembleTransformComponent assembleTransformComponent;
+
     private RedisCachComponent redisCachComponent;
+
     private TypeCarInfoTransformComponent typeCarInfoTransformComponent;
 
     public AssembleService(AssembleTransformComponent assembleTransformComponent
@@ -31,7 +33,7 @@ public class AssembleService {
     public void assembleCar(String jsonMessage) throws JsonProcessingException {
         AssembleRequestModel assembleRequestModel = this.assembleTransformComponent.jsonToModel(jsonMessage);
         log.info("assembleACar orderid {}", assembleRequestModel.getOrderId());
-        
+
         try {
             // TODO: 15/11/65
             List<TypeCarInfoModel> typeCarInfoModels = this.typeCarInfoTransformComponent

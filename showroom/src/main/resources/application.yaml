@@ -11,12 +11,8 @@ app:
     bootstrap-servers: localhost:29092
     topics:
       is-ready: factory.is.ready
-    truststore:
-      location: /Users/jay/Downloads/car-factory-template-2/client.truststore.jks
-      password: 123456
-    security:
-      username: magickiat
-      password: client-secret
+    groupid: factory.is.ready.group
+    offset-reset: latest
 spring:
   main:
     allow-bean-definition-overriding: true

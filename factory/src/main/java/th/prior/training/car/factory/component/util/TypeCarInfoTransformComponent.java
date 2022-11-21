@@ -52,7 +52,7 @@ public class TypeCarInfoTransformComponent implements BaseTransformComponent<Typ
     }
 
     public List<TypeCarInfoModel> jsonToModelList(String json) throws JsonProcessingException {
-        return this.objectMapper.readValue(json, new TypeReference<List<TypeCarInfoModel>>(){});
+        return this.objectMapper.readValue(json, new TypeReference<>(){});
     }
 
     public String modelListTojson(Object o) throws JsonProcessingException {
