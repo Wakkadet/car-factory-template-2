@@ -9,30 +9,30 @@ import th.prior.training.car.factory.serialization.DateTimeSerializer;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity(name = "TYPE_CAR_INFO")
-@Table(name = "TYPE_CAR_INFO")
+@Entity(name = "type_car_info")
+@Table(name = "type_car_info")
 @Data
 public class TypeCarInfoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="TYPE_ID")
+    @Column(name="type_id")
     private int typeId;
 
-    @Column(name = "TYPE_GROUP")
+    @Column(name = "type_group")
     private String typeGroup;
 
-    @Column(name = "TYPE_PART")
+    @Column(name = "type_part")
     private String typePart;
 
-    @Column(name = "TYPE_AMOUNT")
+    @Column(name = "type_amount")
     private int typeAmount;
 
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonSerialize(using = DateTimeSerializer.class)
-    @Column(name = "TYPE_CREATE_DATE")
+    @Column(name = "type_create_date")
     private LocalDateTime typeCreateDate;
 
-    @Column(name = "IS_ACTIVE")
+    @Column(name = "is_active")
     private String isActive;
 }
