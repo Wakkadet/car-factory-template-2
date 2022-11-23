@@ -15,20 +15,20 @@ data:
             url: https://factory:8080/factory/api/assemble
             timeout: 5000
       kafka:
-        bootstrap-servers: 192.168.49.1:39092
+        bootstrap-servers: 192.168.65.2:39092
         topics:
-          is-ready: factory.is.ready
-        truststore:
-          location: /home/app/client.truststore.jks
-          password: clientsecret
-        security:
-          username: magickiat
-          password: client-secret
+          is-ready: factory.is.ready 
+       # truststore:
+       #   location: /home/app/client.truststore.jks
+       #   password: clientsecret
+       # security:
+       #   username: magickiat
+       #   password: client-secret
     spring:
       main:
         allow-bean-definition-overriding: true
       datasource:
-        url: jdbc:mysql://192.168.49.1:3306/showroom
+        url: jdbc:mysql://192.168.65.2:3306/showroom
         username: root
         password: password
         driver-class-name: com.mysql.cj.jdbc.Driver

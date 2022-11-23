@@ -21,7 +21,7 @@ spec:
             - localhost
       containers:
         - name: showroom-deployment
-          image: showroom:v1.0.0
+          image: showroom:V1.0.0
           imagePullPolicy: Never
           env:
             - name: JAVA_OPTS

@@ -6,7 +6,7 @@ metadata:
   labels:
     app: showroom-label
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 8080
       targetPort: 8080

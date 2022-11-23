@@ -8,7 +8,7 @@ app:
         url: https://localhost:8081/factory/api/assemble
         timeout: 5000
   kafka:
-    bootstrap-servers: localhost:29092
+    bootstrap-servers: kafka:29092
     topics:
       is-ready: factory.is.ready
     groupid: factory.is.ready.group
@@ -17,9 +17,9 @@ spring:
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mysql://localhost:3306/showroom
+    url: jdbc:mysql://mysql:3306/showroom
     username: root
-    password: 1234
+    password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     open-in-view: false
